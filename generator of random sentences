@@ -1,0 +1,24 @@
+import random
+
+# Списки слов для структуры предложения
+subjects = ["Программист", "Кот", "Алгоритм", "Студент", "Искусственный интеллект"]
+adjectives = ["быстрый", "ленивый", "загадочный", "веселый", "мощный"]
+verbs = ["пишет", "изучает", "взламывает", "создает", "анализирует"]
+objects = ["код", "базу данных", "кофе", "проект", "сложную задачу"]
+
+def generate_sentence():
+    # Случайный выбор слова из каждого списка
+    subject = random.choice(subjects)
+    adjective = random.choice(adjectives).lower()
+    verb = random.choice(verbs)
+    obj = random.choice(objects)
+
+    # Сборка предложения через f-строку
+    sentence = f"{subject} {adjective} {verb} {obj}."
+    return sentence
+
+# Вывод 5 случайных предложений
+if __name__ == "__main__":
+    print("--- Генератор случайных предложений ---")
+    for i in range(5):
+        print(f"{i+1}. {generate_sentence()}")
